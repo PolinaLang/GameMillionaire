@@ -40,11 +40,10 @@ namespace WhoWantsToBeAMillionaire
             this.MissStep = new MetroFramework.Controls.MetroButton();
             this.callFriend = new MetroFramework.Controls.MetroButton();
             this.hallHelp = new MetroFramework.Controls.MetroButton();
-            this.newGame = new MetroFramework.Controls.MetroButton();
             this.currentLevel = new MetroFramework.Controls.MetroTextBox();
             this.IblQuestion = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tryAnswer = new MetroFramework.Controls.MetroButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,7 +127,7 @@ namespace WhoWantsToBeAMillionaire
             "           2 000",
             "           1 000",
             "              500"});
-            this.IstLevel.Location = new System.Drawing.Point(708, 123);
+            this.IstLevel.Location = new System.Drawing.Point(708, 77);
             this.IstLevel.Name = "IstLevel";
             this.IstLevel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.IstLevel.Size = new System.Drawing.Size(100, 212);
@@ -187,22 +186,9 @@ namespace WhoWantsToBeAMillionaire
             this.hallHelp.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.hallHelp.Click += new System.EventHandler(this.hallHelp_Click);
             // 
-            // newGame
-            // 
-            this.newGame.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.newGame.Location = new System.Drawing.Point(608, 28);
-            this.newGame.Name = "newGame";
-            this.newGame.Size = new System.Drawing.Size(200, 36);
-            this.newGame.Style = MetroFramework.MetroColorStyle.Magenta;
-            this.newGame.TabIndex = 15;
-            this.newGame.Tag = "";
-            this.newGame.Text = "Новая игра";
-            this.newGame.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.newGame.Click += new System.EventHandler(this.newGame_Click);
-            // 
             // currentLevel
             // 
-            this.currentLevel.Location = new System.Drawing.Point(608, 83);
+            this.currentLevel.Location = new System.Drawing.Point(608, 20);
             this.currentLevel.Name = "currentLevel";
             this.currentLevel.Size = new System.Drawing.Size(200, 30);
             this.currentLevel.Style = MetroFramework.MetroColorStyle.Magenta;
@@ -221,16 +207,6 @@ namespace WhoWantsToBeAMillionaire
             this.IblQuestion.Text = "IblQuestion";
             this.IblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WhoWantsToBeAMillionaire.Properties.Resources.pic;
-            this.pictureBox1.Location = new System.Drawing.Point(294, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(251, 248);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // tryAnswer
             // 
             this.tryAnswer.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -244,6 +220,16 @@ namespace WhoWantsToBeAMillionaire
             this.tryAnswer.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.tryAnswer.Click += new System.EventHandler(this.tryAnswer_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WhoWantsToBeAMillionaire.Properties.Resources.pic;
+            this.pictureBox1.Location = new System.Drawing.Point(294, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(251, 248);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,7 +239,6 @@ namespace WhoWantsToBeAMillionaire
             this.Controls.Add(this.tryAnswer);
             this.Controls.Add(this.IblQuestion);
             this.Controls.Add(this.currentLevel);
-            this.Controls.Add(this.newGame);
             this.Controls.Add(this.hallHelp);
             this.Controls.Add(this.callFriend);
             this.Controls.Add(this.MissStep);
@@ -289,7 +274,6 @@ namespace WhoWantsToBeAMillionaire
         private MetroFramework.Controls.MetroButton MissStep;
         private MetroFramework.Controls.MetroButton callFriend;
         private MetroFramework.Controls.MetroButton hallHelp;
-        private MetroFramework.Controls.MetroButton newGame;
         private MetroFramework.Controls.MetroTextBox currentLevel;
         private System.Windows.Forms.Label IblQuestion;
         private MetroFramework.Controls.MetroButton tryAnswer;

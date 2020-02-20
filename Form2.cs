@@ -14,10 +14,11 @@ namespace WhoWantsToBeAMillionaire
 {
     public partial class Form2 : MetroForm
     {
-        int result = 0;
+        int result;
         public Form2(string str)
         {
             InitializeComponent();
+            this.ControlBox = false;
             textBox.Text = str;
         }
 
@@ -38,7 +39,7 @@ namespace WhoWantsToBeAMillionaire
 
         private void finGame_Click(object sender, EventArgs e)
         {
-            result = 0;
+            result = -1;
         }
 
        

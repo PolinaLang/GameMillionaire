@@ -18,6 +18,7 @@ namespace WhoWantsToBeAMillionaire
         public Voiting(string str1, string str2, string str3, string str4)
         {
             InitializeComponent();
+            this.ControlBox = false;
             label1.Text = str1;
             label2.Text = str2;
             label3.Text = str3;
@@ -43,8 +44,9 @@ namespace WhoWantsToBeAMillionaire
 
         }
 
-        
-
-        
+        private void close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

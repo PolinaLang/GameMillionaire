@@ -40,12 +40,13 @@
             this.textBox2 = new MetroFramework.Controls.MetroLabel();
             this.textBox3 = new MetroFramework.Controls.MetroLabel();
             this.textBox4 = new MetroFramework.Controls.MetroLabel();
+            this.close = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // answer1
             // 
             this.answer1.AccessibleDescription = "";
-            this.answer1.Location = new System.Drawing.Point(53, 61);
+            this.answer1.Location = new System.Drawing.Point(53, 71);
             this.answer1.Maximum = 100;
             this.answer1.Name = "answer1";
             this.answer1.Size = new System.Drawing.Size(100, 100);
@@ -58,7 +59,7 @@
             // answer2
             // 
             this.answer2.AccessibleDescription = "";
-            this.answer2.Location = new System.Drawing.Point(265, 61);
+            this.answer2.Location = new System.Drawing.Point(265, 71);
             this.answer2.Maximum = 100;
             this.answer2.Name = "answer2";
             this.answer2.Size = new System.Drawing.Size(100, 100);
@@ -71,7 +72,7 @@
             // answer3
             // 
             this.answer3.AccessibleDescription = "";
-            this.answer3.Location = new System.Drawing.Point(53, 199);
+            this.answer3.Location = new System.Drawing.Point(53, 209);
             this.answer3.Maximum = 100;
             this.answer3.Name = "answer3";
             this.answer3.Size = new System.Drawing.Size(100, 100);
@@ -84,7 +85,7 @@
             // answer4
             // 
             this.answer4.AccessibleDescription = "";
-            this.answer4.Location = new System.Drawing.Point(265, 199);
+            this.answer4.Location = new System.Drawing.Point(265, 209);
             this.answer4.Maximum = 100;
             this.answer4.Name = "answer4";
             this.answer4.Size = new System.Drawing.Size(100, 100);
@@ -96,7 +97,7 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(23, 164);
+            this.label1.Location = new System.Drawing.Point(23, 174);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(160, 23);
             this.label1.Style = MetroFramework.MetroColorStyle.Purple;
@@ -107,7 +108,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(233, 164);
+            this.label2.Location = new System.Drawing.Point(233, 174);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 23);
             this.label2.Style = MetroFramework.MetroColorStyle.Purple;
@@ -118,7 +119,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(23, 302);
+            this.label3.Location = new System.Drawing.Point(23, 312);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(160, 23);
             this.label3.Style = MetroFramework.MetroColorStyle.Purple;
@@ -129,7 +130,7 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(233, 302);
+            this.label4.Location = new System.Drawing.Point(233, 312);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 23);
             this.label4.Style = MetroFramework.MetroColorStyle.Purple;
@@ -141,7 +142,7 @@
             // textBox1
             // 
             this.textBox1.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.textBox1.Location = new System.Drawing.Point(90, 98);
+            this.textBox1.Location = new System.Drawing.Point(90, 108);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(29, 24);
             this.textBox1.TabIndex = 8;
@@ -151,7 +152,7 @@
             // textBox2
             // 
             this.textBox2.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.textBox2.Location = new System.Drawing.Point(303, 98);
+            this.textBox2.Location = new System.Drawing.Point(303, 108);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(29, 24);
             this.textBox2.TabIndex = 9;
@@ -161,7 +162,7 @@
             // textBox3
             // 
             this.textBox3.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.textBox3.Location = new System.Drawing.Point(90, 239);
+            this.textBox3.Location = new System.Drawing.Point(90, 249);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(29, 24);
             this.textBox3.TabIndex = 10;
@@ -171,18 +172,31 @@
             // textBox4
             // 
             this.textBox4.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.textBox4.Location = new System.Drawing.Point(303, 239);
+            this.textBox4.Location = new System.Drawing.Point(303, 249);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(29, 24);
             this.textBox4.TabIndex = 11;
             this.textBox4.Text = "texBox4";
             this.textBox4.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // voiting
+            // close
+            // 
+            this.close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.close.Location = new System.Drawing.Point(389, 9);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(24, 20);
+            this.close.Style = MetroFramework.MetroColorStyle.Purple;
+            this.close.TabIndex = 12;
+            this.close.Text = "X";
+            this.close.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.close.Click += new System.EventHandler(this.close_Click);
+            // 
+            // Voiting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 332);
+            this.ClientSize = new System.Drawing.Size(416, 354);
+            this.Controls.Add(this.close);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -196,11 +210,11 @@
             this.Controls.Add(this.answer2);
             this.Controls.Add(this.answer1);
             this.Location = new System.Drawing.Point(229, 7);
-            this.Name = "voiting";
+            this.Name = "Voiting";
             this.Resizable = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Text = "Результат голосования";
+            this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.voiting_Load);
             this.ResumeLayout(false);
@@ -221,5 +235,6 @@
         private MetroFramework.Controls.MetroLabel textBox2;
         private MetroFramework.Controls.MetroLabel textBox3;
         private MetroFramework.Controls.MetroLabel textBox4;
+        private MetroFramework.Controls.MetroButton close;
     }
 }

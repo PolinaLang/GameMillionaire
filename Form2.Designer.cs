@@ -36,6 +36,7 @@
             // newGame
             // 
             this.newGame.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.newGame.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.newGame.Location = new System.Drawing.Point(23, 170);
             this.newGame.Name = "newGame";
             this.newGame.Size = new System.Drawing.Size(75, 31);

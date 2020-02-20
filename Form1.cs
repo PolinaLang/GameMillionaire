@@ -14,12 +14,9 @@ using MetroFramework.Controls;
 
 namespace WhoWantsToBeAMillionaire
     //todo
-    //добавить кнопку право на ошибку
-    //убрать кнопку новая игра и сделать выбор при неправильном ответе, модальное окно, у модального окна убрать крестик
-    //убрать кнопки у форм: закрыть, развернуть
+    //доработать кнопку право на ошибку
     //при выборе ответа остальные кнопки неактивны
     //заменить рандомные вопросы: на легких уровнях правильно, на тяжелых не правильно
-    //голосование, звкрепить окно по центру относительно родитеьского элемента
 {
     public partial class Form1 : MetroForm
     {
@@ -31,6 +28,7 @@ namespace WhoWantsToBeAMillionaire
         public Form1()
         {
             InitializeComponent();
+            this.ControlBox = false;
             ReadFile();
             startGame();
         }
@@ -104,7 +102,7 @@ namespace WhoWantsToBeAMillionaire
             {
                 testDialog.Close();
                 startGame();
-            } else
+            } else if (testDialog.GetResult() == -1)
             {
                 Application.Exit();
             }
@@ -190,11 +188,6 @@ namespace WhoWantsToBeAMillionaire
             ShowQuestion(currentQuestion);
             MissStep.Text = "Использовано";
             MissStep.Enabled = false;
-        }
-
-        private void newGame_Click(object sender, EventArgs e)
-        {
-            startGame();
         }
 
         private void callFriend_Click(object sender, EventArgs e)
