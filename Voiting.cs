@@ -15,7 +15,8 @@ namespace WhoWantsToBeAMillionaire
     public partial class Voiting : MetroForm
     {
         private Random rnd = new Random();
-        public Voiting(string str1, string str2, string str3, string str4)
+        int right;
+        public Voiting(string str1, string str2, string str3, string str4, int rightAnswer)
         {
             InitializeComponent();
             this.ControlBox = false;
@@ -23,16 +24,16 @@ namespace WhoWantsToBeAMillionaire
             label2.Text = str2;
             label3.Text = str3;
             label4.Text = str4;
-
+            right = rightAnswer;
         }
 
         private void voiting_Load(object sender, EventArgs e)
         {
-            int a = rnd.Next(100);
+            int a = rnd.Next(35, 60);
             int b = rnd.Next(1, 100 - a);
             int c = rnd.Next(1, 100 - a - b);
             int d = 100 - a - b - c;
-
+                
             answer1.Value = a;
             textBox1.Text = $"{a}%";
             answer2.Value = b;

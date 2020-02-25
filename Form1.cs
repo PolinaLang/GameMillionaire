@@ -13,16 +13,14 @@ using MetroFramework.Forms;
 using MetroFramework.Controls;
 
 namespace WhoWantsToBeAMillionaire
-    //todo
-    //доработать кнопку право на ошибку
-    //при выборе ответа остальные кнопки неактивны
-    //заменить рандомные вопросы: на легких уровнях правильно, на тяжелых не правильно
 {
     public partial class Form1 : MetroForm
     {
         List<Question> questions = new List<Question>();
+        List<MetroButton> buttonsM = new List<MetroButton>();
         private Random rnd = new Random();
         int level = 0;
+        bool ok = true;
         Question currentQuestion;
 
         public Form1()
@@ -112,6 +110,7 @@ namespace WhoWantsToBeAMillionaire
         private void resetParameters()
         {
             level = 0;
+            ok = true;
             MissStep.Enabled = true;
             MissStep.Text = "Пропустить ход";
             btnFiftyFifty.Enabled = true;
@@ -132,16 +131,22 @@ namespace WhoWantsToBeAMillionaire
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            buttonsM.Add(this.btnAnswer1);
+            buttonsM.Add(this.btnAnswer2);
+            buttonsM.Add(this.btnAnswer3);
+            buttonsM.Add(this.btnAnswer4);
         }
 
         private async void btnAnswer1_Click(object sender, EventArgs e)
         {
             MetroButton button = (MetroButton)sender;
+            foreach (var item in buttonsM)
+            {
+                if (item.Name != button.Name)
+                    item.Enabled = false;
+            }
             button.Style = MetroColorStyle.White;
             await Task.Delay(1200);
-            
-
             if (currentQuestion.RightAnswer == int.Parse(button.Tag.ToString()))
             {
                 button.Style = MetroColorStyle.Green;
@@ -152,7 +157,17 @@ namespace WhoWantsToBeAMillionaire
             {
                 button.Style = MetroColorStyle.Red;
                 await Task.Delay(1000);
-                finishGame();
+                if (tryAnswer.Enabled == false && ok == true)
+                {
+                    level--;
+                    NextStep();
+                    ok = false;
+
+                } else
+                {
+                    finishGame();
+                }
+                
                 button.Style = MetroColorStyle.Purple;
             }
         }
@@ -199,13 +214,13 @@ namespace WhoWantsToBeAMillionaire
                     MessageBox.Show($"Звоним другу...\nЯ в этом не силен, ты же знаешь...Возможно правильный ответ \"{btnAnswer1.Text}\".");
                     break;
                 case 2:
-                    MessageBox.Show($"Звоним другу...\nТы позвонил куда надо! Я уверен что правильный ответ \"{btnAnswer2.Text}\".");
+                    MessageBox.Show($"Звоним другу...\nТы позвонил куда надо! Я уверен что правильный ответ \"{currentQuestion.RightAnswer}\".");
                     break;
                 case 3:
                     MessageBox.Show($"Звоним другу...\nИзвини, я сейчас не могу говорить, созвонимся позже.");
                     break;
                 case 4:
-                    MessageBox.Show($"Звоним другу...\nХмм, дай подумать...Наверное правильный ответ \"{btnAnswer2.Text}\" или \"{btnAnswer3.Text}\". Хотя и \"{btnAnswer1.Text}\" тоже подходит...Мой ответ \"{btnAnswer4.Text}\".");
+                    MessageBox.Show($"Звоним другу...\nХмм, дай подумать...Наверное правильный ответ \"{btnAnswer2.Text}\" или \"{btnAnswer3.Text}\". Хотя и \"{btnAnswer4.Text}\" тоже подходит...Мой ответ \"{btnAnswer4.Text}\".");
                     break;
             }
             callFriend.Text = "Использовано";
@@ -214,7 +229,7 @@ namespace WhoWantsToBeAMillionaire
 
         private void hallHelp_Click(object sender, EventArgs e)
         {
-            Form voiting = new Voiting(btnAnswer1.Text, btnAnswer2.Text, btnAnswer3.Text, btnAnswer4.Text);
+            Form voiting = new Voiting(btnAnswer1.Text, btnAnswer2.Text, btnAnswer3.Text, btnAnswer4.Text, currentQuestion.RightAnswer);
             voiting.ShowDialog();
 
             hallHelp.Text = "Использовано";
@@ -223,9 +238,13 @@ namespace WhoWantsToBeAMillionaire
 
         private void tryAnswer_Click(object sender, EventArgs e)
         {
-
             tryAnswer.Text = "Использовано";
             tryAnswer.Enabled = false;
+        }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

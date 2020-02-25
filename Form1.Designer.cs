@@ -44,6 +44,7 @@ namespace WhoWantsToBeAMillionaire
             this.IblQuestion = new System.Windows.Forms.Label();
             this.tryAnswer = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.close = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,6 +108,7 @@ namespace WhoWantsToBeAMillionaire
             // 
             this.IstLevel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.IstLevel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IstLevel.Enabled = false;
             this.IstLevel.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IstLevel.ForeColor = System.Drawing.SystemColors.Window;
             this.IstLevel.FormattingEnabled = true;
@@ -127,7 +129,7 @@ namespace WhoWantsToBeAMillionaire
             "           2 000",
             "           1 000",
             "              500"});
-            this.IstLevel.Location = new System.Drawing.Point(708, 77);
+            this.IstLevel.Location = new System.Drawing.Point(708, 70);
             this.IstLevel.Name = "IstLevel";
             this.IstLevel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.IstLevel.Size = new System.Drawing.Size(100, 212);
@@ -188,7 +190,8 @@ namespace WhoWantsToBeAMillionaire
             // 
             // currentLevel
             // 
-            this.currentLevel.Location = new System.Drawing.Point(608, 20);
+            this.currentLevel.Enabled = false;
+            this.currentLevel.Location = new System.Drawing.Point(608, 34);
             this.currentLevel.Name = "currentLevel";
             this.currentLevel.Size = new System.Drawing.Size(200, 30);
             this.currentLevel.Style = MetroFramework.MetroColorStyle.Magenta;
@@ -230,12 +233,25 @@ namespace WhoWantsToBeAMillionaire
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // close
+            // 
+            this.close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.close.Location = new System.Drawing.Point(830, 10);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(24, 20);
+            this.close.Style = MetroFramework.MetroColorStyle.Purple;
+            this.close.TabIndex = 21;
+            this.close.Text = "X";
+            this.close.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.close.Click += new System.EventHandler(this.close_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(861, 467);
+            this.Controls.Add(this.close);
             this.Controls.Add(this.tryAnswer);
             this.Controls.Add(this.IblQuestion);
             this.Controls.Add(this.currentLevel);
@@ -277,6 +293,7 @@ namespace WhoWantsToBeAMillionaire
         private MetroFramework.Controls.MetroTextBox currentLevel;
         private System.Windows.Forms.Label IblQuestion;
         private MetroFramework.Controls.MetroButton tryAnswer;
+        private MetroFramework.Controls.MetroButton close;
     }
 }
 
