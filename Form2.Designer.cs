@@ -61,9 +61,9 @@
             // 
             this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox.Location = new System.Drawing.Point(43, 26);
+            this.textBox.Location = new System.Drawing.Point(23, 17);
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(152, 119);
+            this.textBox.Size = new System.Drawing.Size(196, 139);
             this.textBox.TabIndex = 2;
             this.textBox.Text = "textBox";
             this.textBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

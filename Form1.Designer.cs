@@ -108,7 +108,6 @@ namespace WhoWantsToBeAMillionaire
             // 
             this.IstLevel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.IstLevel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IstLevel.Enabled = false;
             this.IstLevel.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IstLevel.ForeColor = System.Drawing.SystemColors.Window;
             this.IstLevel.FormattingEnabled = true;
@@ -129,7 +128,7 @@ namespace WhoWantsToBeAMillionaire
             "           2 000",
             "           1 000",
             "              500"});
-            this.IstLevel.Location = new System.Drawing.Point(708, 70);
+            this.IstLevel.Location = new System.Drawing.Point(708, 77);
             this.IstLevel.Name = "IstLevel";
             this.IstLevel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.IstLevel.Size = new System.Drawing.Size(100, 212);
@@ -190,7 +189,6 @@ namespace WhoWantsToBeAMillionaire
             // 
             // currentLevel
             // 
-            this.currentLevel.Enabled = false;
             this.currentLevel.Location = new System.Drawing.Point(608, 34);
             this.currentLevel.Name = "currentLevel";
             this.currentLevel.Size = new System.Drawing.Size(200, 30);

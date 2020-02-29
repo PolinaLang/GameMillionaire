@@ -52,7 +52,7 @@ namespace WhoWantsToBeAMillionaire
             btnAnswer3.Text = q.Answers[2];
             btnAnswer4.Text = q.Answers[3];
         }
-
+        
         private Question GetQuestion(int level)
         {
             var questionsWithLevel = questions.Where(q => q.Level == level).ToList();
@@ -87,9 +87,9 @@ namespace WhoWantsToBeAMillionaire
         private void finishGame()
         {
             string str;
-            if (level == 15)
+            if (level >= 15)
             {
-                str = "Поздравляем, Вы выиграли 3 миллиона рублей!\nИгра Окончена!\nХотите попробовать еще раз?";
+                str = "Поздравляем! Вы выиграли 3 миллиона рублей!\nИгра Окончена!\nХотите попробовать еще раз?";
             } else
             {
                 str = "Неверный ответ!\nИгра окончена!\nХотите попробовать еще раз?";
@@ -152,7 +152,14 @@ namespace WhoWantsToBeAMillionaire
                 button.Style = MetroColorStyle.Green;
                 await Task.Delay(1000);
                 button.Style = MetroColorStyle.Purple;
-                NextStep();
+                if (level == 15)
+                {
+                    finishGame();
+                } else
+                {
+                    NextStep();
+                }
+                
             } else
             {
                 button.Style = MetroColorStyle.Red;
@@ -229,7 +236,7 @@ namespace WhoWantsToBeAMillionaire
 
         private void hallHelp_Click(object sender, EventArgs e)
         {
-            Form voiting = new Voiting(btnAnswer1.Text, btnAnswer2.Text, btnAnswer3.Text, btnAnswer4.Text, currentQuestion.RightAnswer);
+            Form voiting = new Voiting(btnAnswer1.Text, btnAnswer2.Text, btnAnswer3.Text, btnAnswer4.Text);
             voiting.ShowDialog();
 
             hallHelp.Text = "Использовано";
